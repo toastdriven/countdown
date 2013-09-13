@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Test</title>
+  <script src="file:///Users/daniel/Desktop/countdown/countdown.js"></script>
+</head>
+<body>
+  <form>
+    <input type="text" id="countdown" style="width: 400px">
+  </form>
+
+  <script type="text/javascript">
+    window.setTimeout(function() {
+      var count = new Countdown({
+        target_date: new Date(2013, 8, 16, 17, 42)
+      })
+      count.start()
+
+      document.addEventListener('countdowntick', function() {
+        var countdown_field = document.getElementById('countdown')
+        countdown_field.value = count.toString()
+      }, false)
+    }, 1000)
+  </script>
+</body>
+</html>
